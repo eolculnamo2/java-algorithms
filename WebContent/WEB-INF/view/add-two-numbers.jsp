@@ -13,6 +13,7 @@
     <h3>
         First CodeSignal Challenges
     </h3>
+    <em>Taken from www.codesignal.com</em>
     <form action="/AlgoSite/processForm" method="GET">
         <p>
             Add two numbers.
@@ -49,6 +50,18 @@
             Enter text
         </p>
         <input type="text" name="palindromeCandidate"/>
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+     <form action="/AlgoSite/greatest-product" method="GET">
+        <p>
+            Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+        </p>
+        <p>
+            Enter list of numbers separated by "," with no spaces. i.e. 32,12,2,53,23,2
+        </p>
+        <input type="text" name="number-list"/>
         <button type="submit">
             Submit
         </button>

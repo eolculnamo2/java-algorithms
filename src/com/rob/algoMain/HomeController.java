@@ -60,8 +60,7 @@ public class HomeController {
 		}
 		
 		Boolean answer = value1.equals(value2.toString());
-		System.out.println("answer"+answer);
-		System.out.println(value2.toString());
+		
 		if(answer == true) {
 			solution = "Yes";
 		}
@@ -72,6 +71,26 @@ public class HomeController {
 		model.addAttribute("solution", solution);
 		return "answer1";
 	}
+	
+	//ALGORITHM 4
+	@RequestMapping("/greatest-product")
+	public String greatestProduct(HttpServletRequest request, Model model) {
+		
+		String[] arr = request.getParameter("number-list").split(",", 0);
+		int answer = 0;
+
+		for(int i=0; i < arr.length - 1; i++) {
+			int x = Integer.parseInt(arr[i]) * Integer.parseInt(arr[i+1]);
+			if(x > answer) {
+				answer = x;
+			}
+		}
+		
+		model.addAttribute("solution", answer);
+		
+		return "answer1";
+	}
+	
 	
 	
 }
