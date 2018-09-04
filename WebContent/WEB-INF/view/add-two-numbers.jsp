@@ -66,5 +66,17 @@
             Submit
         </button>
     </form>
+    <form action="/AlgoSite/first-duplicate" method="GET">
+        <p>
+            Find the first duplicate number.
+        </p>
+        <p>
+            Enter list of numbers separated by "," with no spaces. i.e. 32,12,2,53,23,2
+        </p>
+        <input type="text" name="duplicate-list"/>
+        <button type="submit">
+            Submit
+        </button>
+    </form>
 </body>
 </html>

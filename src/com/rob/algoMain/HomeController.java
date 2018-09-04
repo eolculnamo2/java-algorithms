@@ -1,10 +1,15 @@
 package com.rob.algoMain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 public class HomeController {
@@ -91,6 +96,28 @@ public class HomeController {
 		return "answer1";
 	}
 	
-	
+	//ALGORITHM 5: First duplicate
+	@RequestMapping("/first-duplicate")
+	public String firstDuplicate(HttpServletRequest request, Model model) {
+		String[] arr = request.getParameter("duplicate-list").split(",", 0);
+		
+		//list stores values that we've seen previously.
+		List<String> list = new ArrayList<String> ();
+		String answer = "No Duplicate";
+		for(int i = 0; i < arr.length; i++) {
+			if(list.contains(arr[i]) == false) {
+				list.add(arr[i]);
+			}
+			else {
+				answer = arr[i];
+				break;
+			}
+		}
+		//returns a String, but it appears the same on the screen. 
+		//casting to integer would be a wasted step.
+		model.addAttribute("solution", answer);
+		
+		return "answer1";
+	}
 	
 }
